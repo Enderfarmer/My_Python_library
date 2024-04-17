@@ -16,4 +16,8 @@ class gooddict(dict):
             raise SyntaxError('Invalid method syntax.')
     def setitem(self, key, val):
         self.__setitem__(key, val)
-    
+    def to_css(self):
+        return str( self ).replace("'", '').replace('{', '').replace('}', '')
+mydict = gooddict()
+mydict.setitem('color', 'blue'); mydict.setitem('one', 1)
+print(mydict.to_css()) if type(mydict.to_css()) == str else print('none')
