@@ -3,4 +3,6 @@ class goodlist(list):
         super().__init__(arg) if arg else super().__init__()
     def to_string(self) -> str:
         return ''.join(self)
-
+    @property
+    def length(self):
+        return len(self)
